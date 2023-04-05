@@ -1,0 +1,210 @@
+/*--------------------------------------------------------------
+| 1 基本的な設定
+--------------------------------------------------------------*/
+head{
+    display: block;
+}
+title{/*title要素を通常の描画エリアに表示させる*/
+    position: relative;
+    display: block;
+    color: rgb(80, 80, 18);
+    text-align: center;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    width: 400px;
+    font-size:38px;
+}
+
+title:before{
+    position: absolute;
+    bottom: 30px;
+    left: calc(50% - 30px);
+    width: 60px;
+    height: 5px;
+    content: '';
+    border-radius: 3px;
+    background: #000;
+}
+
+body{
+    background-color: rgb(233, 233, 130);
+}
+
+/*--------------------------------------------------------------
+| 2 パンくずリスト
+--------------------------------------------------------------*/
+.breadcrumbs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.breadcrumbs li {
+    display: inline;/*横に並ぶように*/
+    list-style: none;
+    font-weight: bold;/*太字*/
+}
+
+.breadcrumbs li:after {
+    /* >を表示*/
+    content: '>';
+    padding: 0 0.2em;
+    color: #555;
+}
+
+.breadcrumbs li:last-child:after {
+    content: '';
+}
+
+.breadcrumbs li a {
+    text-decoration: none;
+    color: gray;
+}
+
+/*--------------------------------------------------------------
+| 3 リストの上下に線
+--------------------------------------------------------------*/
+.listhorizon{
+    color: #ffffff;
+    font-weight: bold;
+    border-top: solid #ffffff 1px;/*上のボーダー*/
+    border-bottom: solid #ffffff 1px;/*下のボーダー*/
+    padding: 0.5em 0 0.5em 1.5em;
+}
+
+.listhorizon li{
+    line-height: 1.5;
+    padding: 0.5em 0;
+}
+
+/*--------------------------------------------------------------
+| 7 要素毎のまとまり
+--------------------------------------------------------------*/
+.elements{
+    padding:10px;
+    margin:10px 5px;
+    border-radius: 20px;
+    color:aliceblue;
+}
+
+/*--------------------------------------------------------------
+| 8 linkのフロートバー
+--------------------------------------------------------------*/
+.links{
+    display: inline-block;
+    margin:10px;
+    padding:10px;
+    right: 10px;
+    background-color: rgba(255, 252, 240, 0.712);
+    border-radius: 10px;
+    position: fixed;
+    bottom: 0px;
+}
+
+/*--------------------------------------------------------------
+| 9 要素のspan設定
+--------------------------------------------------------------*/
+.span{
+    margin-right: 12px;
+}
+
+/*--------------------------------------------------------------
+| 9 その他動作
+--------------------------------------------------------------*/
+a{
+    text-decoration: none;
+    color:brown;
+}
+a:hover{
+    color:brown;
+    opacity: 0.5;
+}
+
+input[type=checkbox] {
+	transform: scale(2.5);
+    float: right;
+    margin-bottom: auto;
+}
+
+input[type=button] {
+	transform: scale(1.5);
+    margin: 20px;
+    font-weight: bold;
+}
+
+input[type=number] {
+	transform: scale(1.5);
+    margin-left: 100px;
+    margin-right: 60px;
+    margin: 0px 50px;
+    font-weight: bold;
+    color:forestgreen;
+}
+
+p.checkmessage{
+    text-align: right;
+    margin-right: 30px;
+}/*”要素を隠す”のチェックボックスの隣に置くメッセージ*/
+
+#ansdisp{
+    color: #bde300;
+    font-size: 40px;
+    font-weight: bold;
+    overflow-wrap: break-word;/*https://developer.mozilla.org/ja/docs/Web/CSS/overflow-wrap*/
+}
+
+#study01 input[type=button] {
+	transform: scale(1.5);
+    margin: 10px 20px;
+    font-weight: bold;
+    color:forestgreen;
+}
+
+#study01 input[type=button]:hover{
+	transform: scale(1.7);
+    color: #e0af59;
+    background-color: rgb(46, 36, 11);
+    transition: 0.5s;
+}
+
+#study01 input[type=button]:active{
+	transform: scale(2);
+    color: coral;
+    background-color: gold;
+    transition: 0s;
+}
+
+#showstr{
+    font-size: 50px;
+    color: #e0af59;
+    margin: 0px;
+    overflow-wrap: break-word;/*https://developer.mozilla.org/ja/docs/Web/CSS/overflow-wrap*/
+}
+
+#indexlist{
+    position: relative;
+    text-align: center;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+#indexlist li{
+    list-style: none;
+}
+
+#study00{
+    padding: 10px;
+    margin:10px 5px;
+    border-radius: 20px;
+    color:aliceblue;
+    background-color: #ff9d52;
+}
+
+#study01{
+    padding: 10px;
+    margin:10px 5px;
+    border-radius: 20px;
+    color:aliceblue;
+    background-color: #529fff;
+}

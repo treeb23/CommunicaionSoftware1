@@ -1,0 +1,140 @@
+#pindex{
+    margin-right: calc(20% - 20px);
+    margin-left: calc(20% - 20px);
+    text-align: center;
+}
+
+#pindex div:hover{
+    transform: scale(1.3);
+    transition: 0.5s;
+}
+
+#pindex a:hover{
+    opacity: 1.0;
+}
+
+/*ch06*/
+#selfintroduce1{
+    background-color: #ff9752;
+}
+#selfintroduce2{
+    background-color: #9d52ff;
+}
+#selfintroduce3{
+    background-color: #52c8ff;
+}
+#brown{
+    color: brown;
+}
+table.ch06 td,table.ch06 th{
+    border:groove;
+    border-color: rgb(90, 84, 3);
+    background-color: rgb(236, 181, 113);
+    width: 250px;
+    height: 60px;
+    font-size: 25px;
+}
+table.ch06{
+    margin: 0px auto ;
+}
+
+/*p1,p2,p3*/
+#timer1{
+    background-color: #ff9d52;
+}
+#quiz1{
+    background-color: #cc6229;
+    padding-bottom: 4vw;
+}
+#quiz1 p{
+    display: inline;
+    font-size: 17px;
+}
+#etime{
+    border-bottom: 0.3vw dashed black;
+    margin-bottom: 0.2vw;
+}
+.btnstrt{
+    position: relative;
+    left: calc(50% - 70px);
+    border-radius: 5px;
+    border-color: aliceblue;
+    font-size: 25px;
+}
+.btnstrt:hover{
+    transform: scale(1.3);
+    transition: 0.2s;
+}
+
+#submitbox{
+    position: relative;
+    left: calc(50% - 70px);
+    border-radius: 5px;
+    border-color: aliceblue;
+    font-size: 25px;
+}
+#btnsubmit{
+    position: relative;
+    left: calc(50% - 70px);
+    border-radius: 5px;
+    border-color: aliceblue;
+    font-size: 25px;
+}
+.btn{
+	transform: scale(1.5);
+    border-radius: 6px;
+    margin-bottom: auto;
+    margin-top: 1vw;
+    margin-left: 72vw;
+}
+#quiz1 h1{
+    color: #ffffff;
+    font-weight: bold;
+    border-top: solid #ffffff;/*上のボーダー*/
+    border-bottom: solid #ffffff 1px;/*下のボーダー*/
+    padding: 0.5em 0 0.5em 1.5em;
+}
+input[type=radio] {
+	transform: scale(1.5);
+    display: inline;
+}
+#timer1{
+    background-color: #ff9d52;
+}
+#timer{
+    background-color: #198f2a;
+}
+#quiz2{
+    background-color:rgb(16, 59, 28);
+    padding-bottom: 4vw;
+}
+#tsctest{
+    background-color:rgb(14, 44, 92);
+    padding-bottom: 4vw;
+}
+#typingspeedchecker{
+    background-color: #4386a1;
+}
+
+/*ch13*/
+#whatartmuseum{
+    background-color: #52c8ff;
+}
+#artmuseum{
+    height: 2300px;
+    transition: 2s;
+}
+.art{
+    font-weight: bold;
+    border-bottom:dashed #ffffff 1px;/*下のボーダー*/
+    padding: 0.5em 0 0.5em 1.5em;
+    border-radius: 16px;
+}
+.art:hover{
+    background-color: rgba(0, 0, 0, 0.478);
+    transition: 2s;
+}
+.art em{
+    color: goldenrod;
+}
+canvas { background: #eee; }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <link rel="stylesheet" href="ch.css" type="text/css">
+        <link rel="stylesheet" href="j.css" type="text/css">
+        <script src="p3.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <meta charset="utf-8">
+        <title>
+            高速キータイピング
+        </title>
+    </head>
+    <body>
+        <!--パンくずリスト-->
+        <ol class="breadcrumbs">
+            <li><a href="pindex.html"><span>ホーム</span></a></li>
+            <li><a href="p3.html"><span>高速キータイピング</span></a></li>
+        </ol>
+        <div id="typingspeedchecker" class="elements">
+            <h1>高速キータイピング</h1>
+            <input type="checkbox" id="tsc" onclick="set_display(document.getElementById('click02'));"><h3 class="checkmessage">説明を非表示</h3>
+            <div id="click02">
+                    <ul class="listhorizon">
+                        <li>ランダムに表示される文字列を正確に入力した時間を測るよ</li>
+                        <li>タイマーは秒数で表示され、5問正解するか開始から45秒で自動的に終了するよ</li>
+                        <li>解答は半角英字で記述してね</li>
+                        <li>文字列を入力してEnterで提出するよ</li>
+                        <li>残り時間が00になるタイミングぎりぎりに回答するとリセットされてしまうから気をつけてね</li>
+                        <li>大文字と小文字の区別があるよ</li>
+                        <li>問題をコピーしても解答欄に貼り付けられないようになっているよ</li>
+                        <li>タイム向上を目指そう！</li>
+                        <li>開始するボタンを押すと自動的に「タイピング速度チェッカーを非表示」にチェックが入るよ</li>
+                    </ul>
+                    <input id="tsclevelselector" type="range" min="1" max="8" value="1" onchange="tsclevelselect();">
+                    <p id="gettsclevelselector">スライダーを動かすと問題の難易度を変更できるよ、問題の難易度5以上では大文字時も出現するよ</p>
+                    <input class="btnstrt" id="tscbtnstart" type="button" value="開始する" onclick="tsc_start();">
+
+            </div>
+        </div>
+        <div id="tsctest" class="elements">
+            <h1>問題</h1>
+            <p></p>
+        </div>
+        <div id=tscscorereload></div>
+        <br><br><br><br><br><br><br><br><br><br><!--タイマとクイズの解答欄がかぶらないためのスペース-->
+
+        <div class="links">
+            <div id="etime"></div>
+            <span class="span"><a href="pindex.html">ホーム</a></span>
+            <span class="span"><a href="p1.html">情報学クイズ</a></span>
+            <span class="span"><a href="p2.html">高速演算大会</a></span>
+            <span class="span"><a href="p3.html">高速キータイピング</a></span>
+            <span class="span"><a href="p4.html">関数計算機</a></span>
+            <a href="p5.html">ドキュメント</a>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <link rel="stylesheet" href="ch.css" type="text/css">
+        <link rel="stylesheet" href="j.css" type="text/css">
+        <script src="p1.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <meta charset="utf-8">
+        <title>
+            情報学クイズ
+        </title>
+    </head>
+    <body>
+        <!--パンくずリスト-->
+        <ol class="breadcrumbs">
+            <li><a href="pindex.html"><span>ホーム</span></a></li>
+            <li><a href="p1.html"><span>情報学クイズ</span></a></li>
+        </ol>
+        <p id="retrieved"></p>
+        <div id="timer1" class="elements">
+            <h1>情報学クイズ</h1>
+            <input type="checkbox" onclick="set_display(document.getElementById('click1'));"><h3 class="checkmessage">クイズについてを非表示</h3>
+            <div id="click1">
+            <ul class="listhorizon">
+                <li>クイズの解答には60秒の制限時間があるよ</li>
+                <li>タイマーはのこり10秒で赤くなるよ</li>
+                <li>解答を選んだら「解答を決定」してね</li>
+                <li>「解答を決定」せずに解答を終了すると得点にはなりませんよ</li>
+                <li>「解答を決定」を押したら解答を変えても無効だよ</li>
+                <li>「解答を終了」を押すとクイズは終了して正答数が表示されるよ</li>
+                <li>残り時間が0になると自動で採点されるよ</li>
+            </ul>
+            <!--<p><input type="text" size="50" id="clock"/></p>-->
+            <!--<div id="etime"></div>-->
+            <!--<div><input type="submit" value="Restart" id="restart"/></div>-->
+            <p></p>
+            <input class="btnstrt" id="btnstart1" type="button" value="クイズ開始" onclick="quiz1_start();">
+            </div>
+        </div>
+
+        <div id="quiz1" class="elements">
+            <h1>クイズ1</h1>
+            <input type="checkbox" onclick="set_display(document.getElementById('click2'));"><h3 class="checkmessage">クイズ1を非表示</h3>
+            <div id="click2">
+            <h2>IPv4アドレス 172.22.29.44/20 のホストが存在するネットワークのブロードキャストアドレスはどれか。</h2>
+            <form id="quiz1-1">
+                <input type="radio" value="a" name="ans"><p>172.22.28.255</p><br>
+                <input type="radio" value="b" name="ans"><p>172.22.29.255</p><br>
+                <input type="radio" value="c" name="ans"><p>172.22.30.255</p><br>
+                <input type="radio" value="d" name="ans"><p>172.22.31.255</p><br>
+            </form>
+            <button type="button" class="btn" id="btn1" onclick="ans1_1();">解答を決定</button>
+            <p></p>
+            </div>
+
+            <h1>クイズ2</h1>
+            <input type="checkbox" onclick="set_display(document.getElementById('click3'));"><h3 class="checkmessage">クイズ2を非表示</h3>
+            <div id="click3">
+            <h2>0～20kHzの帯域幅のオーディオ信号をディジタル信号に変換するのに必要な最大のサンプリング周期を標本化定理によって求めると何マイクロ秒か。</h2>
+            <form id="quiz1-2">
+                <input type="radio" value="a" name="ans"><p>2.5</p><br>
+                <input type="radio" value="b" name="ans"><p>5</p><br>
+                <input type="radio" value="c" name="ans"><p>25</p><br>
+                <input type="radio" value="d" name="ans"><p>50</p><br>
+            </form>
+            <button type="button" class="btn" id="btn2" onclick="ans1_2();">解答を決定</button>
+            <p></p>
+            </div>
+
+            <h1>クイズ3</h1>
+            <input type="checkbox" onclick="set_display(document.getElementById('click4'));"><h3 class="checkmessage">クイズ3を非表示</h3>
+            <div id="click4">
+            <h2>公開鍵暗号によって、n人が相互に通信する場合、全体で何個の異なる鍵が必要になるか。ひと組の公開鍵と秘密鍵は2個と数える。</h2>
+            <form id="quiz1-3">
+                <input type="radio" value="a" name="ans"><p>n+1</p><br>
+                <input type="radio" value="b" name="ans"><p>2n</p><br>
+                <input type="radio" value="c" name="ans"><p>n(n-1)</p><br>
+                <input type="radio" value="d" name="ans"><p>n^2</p><br>
+            </form>
+            <button type="button" class="btn" id="btn3" onclick="ans1_3();">解答を決定</button>
+            <p></p>
+            </div>
+
+            <h1>クイズ4</h1>
+            <input type="checkbox" onclick="set_display(document.getElementById('click5'));"><h3 class="checkmessage">クイズ4を非表示</h3>
+            <div id="click5">
+            <h2>RSA暗号で使われる鍵の長さは最大何ビットか。</h2>
+            <form id="quiz1-4">
+                <input type="radio" value="a" name="ans"><p>256</p><br>
+                <input type="radio" value="b" name="ans"><p>1024</p><br>
+                <input type="radio" value="c" name="ans"><p>4096</p><br>
+                <input type="radio" value="d" name="ans"><p>16384</p><br>
+            </form>
+            <button type="button" class="btn" id="btn4" onclick="ans1_4();">解答を決定</button>
+            <p></p>
+            </div>
+
+            <h1>クイズ5</h1>
+            <input type="checkbox" onclick="set_display(document.getElementById('click6'));"><h3 class="checkmessage">クイズ5を非表示</h3>
+            <div id="click6">
+            <h2>16進小数0.Cを10進小数に変換したものはどれか。</h2>
+            <form id="quiz1-5">
+                <input type="radio" value="a" name="ans"><p>0.12</p><br>
+                <input type="radio" value="b" name="ans"><p>0.55</p><br>
+                <input type="radio" value="c" name="ans"><p>0.75</p><br>
+                <input type="radio" value="d" name="ans"><p>0.84</p><br>
+            </form>
+            <button type="button" class="btn" id="btn5" onclick="ans1_5();">解答を決定</button>
+            <p></p>
+            </div>
+            <div id="submitbox"><p id="submit"></p></div>
+            <input type="button" id="btnsubmit" value="解答を終了" onclick="scorerecord1();">
+            <div id="chart_div"></div>
+        </div><br>
+        <br><br><br><br><br><br><br><br><br><br><!--タイマとクイズの解答欄がかぶらないためのスペース-->
+
+        <div class="links">
+            <div id="etime"></div>
+            <span class="span"><a href="pindex.html">ホーム</a></span>
+            <span class="span"><a href="p1.html">情報学クイズ</a></span>
+            <span class="span"><a href="p2.html">高速演算大会</a></span>
+            <span class="span"><a href="p3.html">高速キータイピング</a></span>
+            <span class="span"><a href="p4.html">関数計算機</a></span>
+            <a href="p5.html">ドキュメント</a>
+        </div>
+    </body>
+</html>

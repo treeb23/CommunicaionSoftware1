@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <link rel="stylesheet" href="ch.css" type="text/css">
+        <link rel="stylesheet" href="j.css" type="text/css">
+        <script src="p2.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <meta charset="utf-8">
+        <title>
+            高速演算大会
+        </title>
+    </head>
+    <body>
+        <!--パンくずリスト-->
+        <ol class="breadcrumbs">
+            <li><a href="pindex.html"><span>ホーム</span></a></li>
+            <li><a href="p2.html"><span>高速演算大会</span></a></li>
+        </ol>
+        <div id="timer" class="elements">
+            <h1>高速演算大会</h1>
+            <input type="checkbox" id="tokutenn" onclick="set_display(document.getElementById('click01'));"><h3 class="checkmessage">得点についてを非表示</h3>
+            <div id="click01">
+            <ul class="listhorizon">
+                <li>制限時間(30秒)内に正解した問題数で競うよ</li>
+                <li>タイマーはのこり10秒になると赤くなるよ</li>
+                <li>解答は半角数字で記述してね</li>
+                <li>数字を入力してEnterで提出するよ</li>
+                <li>残り時間が00になるタイミングぎりぎりに回答するとリセットされてしまうから気をつけてね</li>
+                <li>間違えた場合は残り時間が１秒減るペナルティがあるよ</li>
+                <li>残り0秒になると自動的にスコアが集計されてランクDからランクS+が表示されるよ</li>
+                <li>S+に必要な得点は難易度最低のとき26点,最高のとき6点だよ</li>
+                <li>開始するボタンを押すと自動的に「得点についてを非表示」にチェックが入るよ</li>
+            </ul>
+            <input id="levelselector" type="range" min="1" max="20" value="1" onchange="levelselect();">
+            <p id="getlevelselector">&lt;スライダーを動かすと問題の難易度を変更できるよ&gt;</p>
+            <input class="btnstrt" id="btnstart" type="button" value="開始する" onclick="quiz_start();">
+            </div>
+        </div>
+
+        <div id="quiz2" class="elements">
+            <h1>問題</h1>
+            <p></p>
+        </div>
+        <div id=scorereload></div>
+        <br>
+        <br><br><br><br><br><br><br><br><br><br><!--タイマとクイズの解答欄がかぶらないためのスペース-->
+
+        <div class="links">
+            <div id="etime"></div>
+            <span class="span"><a href="pindex.html">ホーム</a></span>
+            <span class="span"><a href="p1.html">情報学クイズ</a></span>
+            <span class="span"><a href="p2.html">高速演算大会</a></span>
+            <span class="span"><a href="p3.html">高速キータイピング</a></span>
+            <span class="span"><a href="p4.html">関数計算機</a></span>
+            <a href="p5.html">ドキュメント</a>
+        </div>
+    </body>
+</html>

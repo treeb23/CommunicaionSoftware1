@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <link rel="stylesheet" href="p4.css" type="text/css">
+        <script src="p4.js"></script>
+        <meta charset="utf-8">
+        <title>
+            関数計算機
+        </title>
+    </head>
+    <body>
+        <!--パンくずリスト-->
+        <ol class="breadcrumbs">
+            <li><a href="pindex.html"><span>ホーム</span></a></li>
+            <li><a href="p4.html"><span>関数計算機</span></a></li>
+        </ol>
+
+        <div id="study01" class="elements">
+            <h1>関数計算機</h1>
+            <input type="checkbox" onclick="set_display(document.getElementById('click00'));"><p class="checkmessage">関数計算機を非表示</p>
+            <div id="click00">
+            <input type="checkbox" onclick="set_display(document.getElementById('click01'));"><p class="checkmessage">関数計算機についてを非表示</p>
+            <div id="click01">
+            <ul class="listhorizon">
+                <li>関数計算機では二次関数や三角関数、対数関数、指数関数を計算できます</li>
+                <li>関数の利用方法 : 数値を入力してから使いたい関数のボタンをクリックしてください</li>
+                <li>数学や物理でよく使われる定数は対応する定数のボタンを押してください</li>
+                <li>定数のボタンは押すと自動的に式への入力まで行われます</li>
+                <li>例えばsin(cos(10))を計算する場合は数値入力欄に10を入力し、cos()を押し、sin()を押します</li>
+                <li>計算結果を出力を押すと入力した計算式と計算結果が表示され、式はリセットされます</li>
+                <li>表示された結果を式に入力することができます</li>
+                <li>式の入力内容によっては計算結果が数値として出力できないこともあります</li>
+                <li>たとえば1&divide;0はinfinity、arccos(2)はNaNのようになります</li>
+            </ul>
+            </div>
+            <div id="click02">
+            <br>
+            <p id="showstr">計算式を入力</p><input type="button" value="リセット" onclick="resetf();">
+            <p>数値入力</p><input type="button" id="showans" onclick="getans();" value="計算結果を出力">
+            <input type="number" value="0" id="cons" class="vari">
+            <input type="button" value="入力を決定" onclick="constantread();">
+            <p>演算子</p>
+            <input type="button" value="+" class="oper" onclick="opercalc(1);">
+            <input type="button" value="-" class="oper" onclick="opercalc(2);">
+            <input type="button" value="&times;" class="oper" onclick="opercalc(3);">
+            <input type="button" value="&divide;" class="oper" onclick="opercalc(4);">
+            </div>
+            <input type="checkbox" onclick="set_display(document.getElementById('click03'));"><p class="checkmessage">関数･定数の表示/非表示を切替える</p>
+            <div id="click03">
+            <p>関数</p>
+            <input type="button" value="sin()" class="func" onclick="funccalc(1);">
+            <input type="button" value="cos()" class="func" onclick="funccalc(2);">
+            <input type="button" value="tan()" class="func" onclick="funccalc(3);">
+            <input type="button" value="arcsin()" class="func" onclick="funccalc(4);">
+            <input type="button" value="arccos()" class="func" onclick="funccalc(5);">
+            <input type="button" value="arctan()" class="func" onclick="funccalc(6);">
+            <input type="button" value="log()" class="func" onclick="funccalc(7);">
+            <input type="button" value="log10()" class="func" onclick="funccalc(8);">
+            <input type="button" value="log2()" class="func" onclick="funccalc(9);">
+            <input type="button" value="exp()" class="func" onclick="funccalc(10);">
+            <input type="button" value="abs()" class="func" onclick="funccalc(11);">
+            <input type="button" value="sinh()" class="func" onclick="funccalc(12);">
+            <input type="button" value="cosh()" class="func" onclick="funccalc(13);">
+            <input type="button" value="tanh()" class="func" onclick="funccalc(14);">
+            <input type="button" value="sqrt()" class="func" onclick="funccalc(15);">
+            <br>
+            <p>定数</p>
+            <input type="button" value="&piv;(3.14)" class="value" onclick="valuecalc(1);">
+            <input type="button" value="e(2.71)" class="value" onclick="valuecalc(2);">
+            <input type="button" value="Ln2(0.693)" class="value" onclick="valuecalc(3);">
+            <input type="button" value="Ln10(2.303)" class="value" onclick="valuecalc(4);">
+            <input type="button" value="log2(e)" class="value" onclick="valuecalc(5);">
+            <input type="button" value="log10(e)" class="value" onclick="valuecalc(6);">
+            <input type="button" value="光速m/s" class="value" onclick="valuecalc(7);">
+            <input type="button" value="電気素量" class="value" onclick="valuecalc(8);">
+            <input type="button" value="真空の透磁率" class="value" onclick="valuecalc(9);">
+            <input type="button" value="真空の誘電率" class="value" onclick="valuecalc(10);">
+        </div>
+            <div id=ansdisp><p>ここに出力結果が表示</p></div><input type="button" value="結果を入力に使う" onclick="ansuse();">
+        </div></div>
+        <br><br><br><br><br><br><br><br><br><br><!--かぶらないためのスペース-->
+
+        <div class="links">
+            <div id="etime"></div>
+            <span class="span"><a href="pindex.html">ホーム</a></span>
+            <span class="span"><a href="p1.html">情報学クイズ</a></span>
+            <span class="span"><a href="p2.html">高速演算大会</a></span>
+            <span class="span"><a href="p3.html">高速キータイピング</a></span>
+            <span class="span"><a href="p4.html">関数計算機</a></span>
+            <a href="p5.html">ドキュメント</a>
+        </div>
+    </body>
+</html>

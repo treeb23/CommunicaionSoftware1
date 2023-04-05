@@ -1,0 +1,309 @@
+/*--------------------------------------------------------------
+| 1 基本的な設定
+--------------------------------------------------------------*/
+head{
+    display: block;
+}
+title{/*title要素を通常の描画エリアに表示させる*/
+    position: relative;
+    display: block;
+    color: rgb(80, 80, 18);
+    text-align: center;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    width: 400px;
+    font-size:38px;
+}
+
+title:before{
+    position: absolute;
+    bottom: 30px;
+    left: calc(50% - 30px);
+    width: 60px;
+    height: 5px;
+    content: '';
+    border-radius: 3px;
+    background: #000;
+}
+
+body{
+    background-color: rgb(233, 233, 130);
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td,th{
+    border: hidden;
+    width: 200px;
+    height: auto;
+    background-color: rgb(197, 163, 30);
+    font-size: 15px;
+}
+
+/*--------------------------------------------------------------
+| 2 パンくずリスト
+--------------------------------------------------------------*/
+.breadcrumbs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.breadcrumbs li {
+    display: inline;/*横に並ぶように*/
+    list-style: none;
+    font-weight: bold;/*太字*/
+}
+
+.breadcrumbs li:after {
+    /* >を表示*/
+    content: '>';
+    padding: 0 0.2em;
+    color: #555;
+}
+
+.breadcrumbs li:last-child:after {
+    content: '';
+}
+
+.breadcrumbs li a {
+    text-decoration: none;
+    color: gray;
+}
+
+/*--------------------------------------------------------------
+| 3 リストの上下に線
+--------------------------------------------------------------*/
+.listhorizon{
+    color: #ffffff;
+    font-weight: bold;
+    border-top: solid #ffffff 1px;/*上のボーダー*/
+    border-bottom: solid #ffffff 1px;/*下のボーダー*/
+    padding: 0.5em 0 0.5em 1.5em;
+}
+
+.listhorizon li{
+    line-height: 1.5;
+    padding: 0.5em 0;
+}
+
+/*--------------------------------------------------------------
+| 4 ボックス内リスト
+--------------------------------------------------------------*/
+.listbox{
+    background: #e0af59;
+    border-radius :8px;
+    box-shadow: 0px 0px 0px 10px #e0af59;
+    border: dashed 4px sienna;
+    font-weight: bold;
+    margin-right: 20px;
+    margin-left: 20px;
+    color: #59521e;
+    padding: 0.5em 0.5em 0.5em 2em;
+}
+.listbox li{
+    line-height: 1.5;
+    padding: 0.5em 0;
+}
+
+/*--------------------------------------------------------------
+| 5 写真の配置
+--------------------------------------------------------------*/
+.pic{
+    width: 50vw;
+    max-width: 400px;
+    max-height: 200px;
+    float: right;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+/*--------------------------------------------------------------
+| 6 吹き出しボックス
+--------------------------------------------------------------*/
+.box-left {
+    position: relative;
+    display: inline-block;
+    margin: 1.5em 0 1.5em 15px;
+    padding: 7px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #555;
+    font-size: 16px;
+    border-radius: 5px;
+    background: #e0edff;
+}
+
+.box-left:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -25px;
+    margin-top: -15px;
+    border: 15px solid transparent;
+    border-right: 15px solid #e0edff;
+}
+
+.box-left p {
+    margin: 0;
+    padding: 0;
+}
+
+/*--------------------------------------------------------------
+| 7 要素毎のまとまり
+--------------------------------------------------------------*/
+.elements{
+    padding:10px;
+    margin:10px 5px;
+    border-radius: 20px;
+    color:aliceblue;
+}
+
+/*--------------------------------------------------------------
+| 8 linkのフロートバー
+--------------------------------------------------------------*/
+.links{
+    display: inline-block;
+    margin:10px;
+    padding:10px;
+    right: 10px;
+    background-color: rgba(255, 252, 240, 0.712);
+    border-radius: 10px;
+    position: fixed;
+    bottom: 0px;
+}
+
+/*--------------------------------------------------------------
+| 9 要素のspan設定
+--------------------------------------------------------------*/
+.span{
+    margin-right: 12px;
+}
+
+/*--------------------------------------------------------------
+| 9 その他動作
+--------------------------------------------------------------*/
+a{
+    text-decoration: none;
+    color:brown;
+}
+a:hover{
+    color:brown;
+    opacity: 0.5;
+}
+
+input[type=checkbox] {
+	transform: scale(2.5);
+    float: right;
+    margin-bottom: auto;
+}
+
+.checkmessage{
+    text-align: right;
+    margin-right: 30px;
+}/*”要素を隠す”のチェックボックスの隣に置くメッセージ*/
+
+.rainbow{
+    padding: 1rem 3rem;
+    color: #fff;
+    margin:auto 150px auto 0px;
+    border-radius: 100vh;
+    background-image: linear-gradient(45deg, #b333ba 0%, #bde300 100%);
+}
+
+#indexlist{
+    position: relative;
+    text-align: center;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+#indexlist li{
+    list-style: none;
+}
+
+#study01{
+    padding: 10px;
+    margin:10px 5px;
+    border-radius: 20px;
+    color:aliceblue;
+    background-color: #529fff;
+}
+
+#study02{
+    padding: 10px;
+    margin:10px 5px;
+    border-radius: 20px;
+    color:rgb(15, 18, 21);
+    background-color: #37e0d7;
+}
+
+#study03{
+    padding: 10px;
+    margin:10px 5px;
+    border-radius: 20px;
+    color:rgb(46, 75, 100);
+    background-color: #52ff9d;
+}
+
+#study04{
+    padding: 10px;
+    margin:10px 5px;
+    border-radius: 20px;
+    color:rgb(51, 58, 63);
+    background-color: #b4ff52;
+}
+
+#study05{
+    padding: 10px;
+    margin:10px 5px;
+    border-radius: 20px;
+    color:rgb(33, 39, 44);
+    background-color: #ffdc52;
+}
+
+#study06{
+    padding: 10px;
+    margin:10px 5px;
+    border-radius: 20px;
+    color:rgb(195, 208, 205);
+    background-color: #a8228b;
+}
+
+#study07{
+    padding: 10px;
+    margin:10px 5px;
+    border-radius: 20px;
+    color:rgb(104, 40, 117);
+    background-color: #8cff52;
+}
+
+#study08{
+    padding: 10px;
+    margin:10px 5px;
+    border-radius: 20px;
+    color:rgb(255, 255, 255);
+    background-color: #7d6b7e;
+}
+
+#weatherbar{
+    background: white;
+    font-weight: bold;
+    padding: 0.5em 0.5em 0em 2em;
+    margin-right: calc(20% - 20px);
+    margin-left: calc(20% - 20px);
+    text-align: center;
+}
+
+#weatherbar p,h2{
+    text-align: center;
+    color: #000;
+}
+
+#source,#weather{
+    font-size: 10px;
+}

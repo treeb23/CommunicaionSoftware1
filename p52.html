@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+        <link rel="stylesheet" href="j.css" type="text/css">
+        <link rel="stylesheet" href="demo.css" type="text/css">
+        <script src="demo.js"></script>
+        <script src="j.js"></script>
+        <meta charset="utf-8">
+        <title>
+            実験用HTML
+        </title>
+    </head>
+    <body>
+
+        <!--パンくずリスト-->
+        <ol class="breadcrumbs">
+            <li><a href="pindex.html"><span>ホーム</span></a></li>
+            <li><a href="p5.html"><span>ドキュメント</span></a></li>
+            <li><a href="p52.html"><span>実験用</span></a></li>
+        </ol>
+
+
+        <!--本文-->
+
+        <div id="part1" class="demo">
+        <h1>使えそうな技術</h1>
+        <input type="checkbox" onclick="set_display(document.getElementById('click01'));"><p class="checkmessage">"使えそうな技術"を非表示</p>
+        <div id="click01">
+        <h2>要素を隠す</h2>
+        <input type="checkbox" onclick="set_display(document.getElementById('click02'));"><p class="checkmessage">非表示</p>
+        <p id="click02">
+            右のチェックを入れるとスタイルのdisplayがnoneに切り替わり、再びチェックを外すとinlineに切り替わる。
+        </p>
+        <p></p>
+        <input type="checkbox" onclick="set_display_hide(document.getElementById('click03'));"><p class="checkmessage">非表示</p>
+        <p id="click03">
+            右のチェックを入れるとスタイルのvisibilityがhiddenに切り替わり、再びチェックを外すとvisibleに切り替わる。
+        </p>
+        <br>
+        <p>参考 https://www.12-technology.com/2022/01/javascript.html</p>
+        <br>
+
+        <h2>吹き出しCSS</h2>
+        <div class="box-left">
+            <p>こんにちは。これは例です。</p>
+        </div>
+        <p>参考 https://saruwakakun.com/html-css/reference/speech-bubble</p>
+        <br>
+
+        <h2>リストの上下に線CSS</h2>
+        <ul class="listhorizon">
+            <li>ああああ</li>
+            <li>いいいい</li>
+            <li>うううう</li>
+            <li>ええええ</li>
+        </ul>
+        <br>
+        <p>ボックス内にリストを配置</p>
+
+        <ul class="listbox">
+            <li>ああああ</li>
+            <li>いいいい</li>
+            <li>うううう</li>
+            <li>ええええ</li>
+        </ul>
+        <br>
+
+        <h2>色（グラデーション）CSS</h2>
+        <p>参考 https://developer.mozilla.org/ja/docs/Web/CSS/gradient/linear-gradient</p>
+
+        <h2>触ると色が変わるCSS</h2>
+        <p class="touch">わわわわわわ</p>
+        <br>
+
+        </div>
+        </div>
+
+        <div id="part2" class="demo">
+            <table>
+                <caption>”td”を触ると消える ! </caption>
+                <tr><th></th><td></td><th></th><th></th><th></th></tr>
+                <tr><td></td><td></td><th></th><td></td><td></td></tr>
+                <tr><td></td><th></th><th></th><td></td><td></td></tr>
+                <tr><th></th><th></th><td></td><td></td><td></td></tr>
+                <tr><td></td><th></th><th></th><th></th><td></td></tr>
+                <tr><td></td><td></td><th></th><th></th><th></th></tr>
+                <tr><td></td><td></td><th></th><th></th><td></td></tr>
+
+            </table>
+            <br>
+
+        </div>
+
+        <div id="part4" class="demo">
+        <p></p>
+        <button onclick="aac();">aacを実行</button>
+        <canvas id="drawingarea2" width="640" height="480"></canvas>
+        <br><br>
+            </div>
+
+            <div id="artmuseum" class="elements">
+                <div id="art1" class="art">
+                    <p>ランダムなRGBの絵</p>
+                    <canvas id="dr1" height="390"></canvas>
+                    <p>memo:Canvasを利用して記述した絵。この絵はfunction dr1();によって描画されている。
+                        dr1();はランダムなRGB値を割り当てた正方形をfor文の2重ループで並べることで描画する。
+                        setIntervalによって0.1秒でRGB値が変化し再描画している。ウィンドウのサイズを変えても色のバランスが崩れないように変数にも工夫をしている。
+                    </p>
+                    <a href="https://developer.mozilla.org/ja/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors">参考にしたサイト:mdn web docs:スタイルと色の適用</a><br>
+                </div>
+                <div id="art3" class="art">
+                    <p>カラフルな点の渦</p>
+                    <canvas id="dr3" height="400" onclick="touchdr3();"></canvas><br>
+                    <input id="levelselector" type="range" min="0.1" max="1" value="0.22" step="0.01" onchange="levelselect();">
+                    <p id="getlevelselector">(スライダーを動かして半径を変更)</p>
+                    <p>memo:Canvasを利用して記述した絵。この絵はfunction dr3();によって描画されている。
+                        canvasタグにonclick属性を付けtouchdr3();を実行するように設定してあるので、
+                        <em>絵をクリックすると絵の&lt;回転速度&gt;と&lt;残像の残り具合&gt;をランダムに変更できる。</em>
+                        dr3();はrequestAnimationFrameを利用して連続的にcanvasを上書きして実現している(requestAnimationFrameのほうがsetIntervalよりも動作が軽いといわれる)。
+                        拡大収縮、回転方向、回転量の制御も実装した。
+                        window.pageYOffsetの値によって回転方向を、getMillisecondの値によって拡大縮小を変化させている（1秒周期で拡大縮小を繰り返している）。
+                    </p>
+                    <a href="https://developer.mozilla.org/ja/docs/Web/API/Canvas_API/Tutorial/Basic_animations">参考にしたサイト:mdn web docs:基本的なアニメーション</a><br>
+                </div>
+            </div>
+            <div id="map"></div>
+    </body>
+</html>

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <link rel="stylesheet" href="j.css" type="text/css">
+        <script src="j.js"></script>
+        <meta charset="utf-8">
+        <title>
+            HTMLとCSSとJavascriptの書き方
+        </title>
+    </head>
+    <body>
+        <!--パンくずリスト-->
+        <ol class="breadcrumbs">
+            <li><a href="pindex.html"><span>ホーム</span></a></li>
+            <li><a href="p5.html"><span>ドキュメント</span></a></li>
+            <li><a href="p51.html"><span>HTMLとCSSとJavascriptの書き方</span></a></li>
+        </ol>
+
+        <div id="study01">
+        <h1>学習用</h1>
+        <p>htmlの課題に要求されること</p>
+        <ul class="listhorizon">
+            <li>ValidなHTML5であること</li>
+            <li>h1,h2,p,ul/ol,li,em,a,img各要素がつかわれていること</li>
+            <li>連結セルを含むtable要素が使われていること</li></ul>
+        <p>cssの課題に要求されること</p>
+        <ul class="listhorizon">
+            <li>HTMLのh2要素にid属性を指定してIDセレクタでh2要素の色を変えてみること</li>
+            <li>table要素のborderや背景色、文字色の装飾</li></ul>
+        <p>h2要素にidを設定し、この色を変化させる。table要素をborder属性を消して罫線・セルを工夫する。<br>
+            CSSでどんな指定をしたか説明する。ルールセットの記述内容、その他具体的効果など。</p>
+        <p><a href="pindex.html">要素の一覧へ</a><br>
+            ブラウザ上でctrl+Uでソースコードを見れる</p><br>
+        </div>
+
+        <div id="study02">
+        <h2>基本的な要素</h2>
+        <h3>HTML5要素</h3>
+        <p>&lt;html&gt;:HTMLのroot要素<br>
+            &lt;head&gt;:基本的情報、基本画面表示されない<br>
+            &lt;body&gt;:本文<br>
+            &lt;p&gt;:段落を設定する<br>
+            &lt;section&gt;:節を設定する<br>
+            &lt;h1&gt;:第1レベルの見出し要素。6レベルまである<br>
+            &lt;ul&gt;:箇条書き（番号なし）、block内でli要素により項目を示す<br>
+            &lt;ol&gt;:箇条書き（番号つき）block内でli要素により項目を示す<br>
+            &lt;dl&gt;:定義リストを示し、block内で、dtで項目を、ddで項目内容を示す<br>
+            &lt;blockquote&gt;:引用を示すblock<br>
+            &lt;q&gt;:引用を示す<br>
+            &lt;br&gt;:段落内で改行する<br></p>
+
+        <h3>要素</h3>
+        <p>要素の開始タグには属性を持たせることができる。<br>
+        属性は1つの開始タグに複数個設定することができ、属性間は1つ以上の半角スペースで区切られる。<br>
+        属性値は通常” ”で囲まれた文字列である。</p>
+        </div>
+
+        <div id="study03">
+        <h2>HTMLの代表的要素</h2>
+        <h3>html要素</h3>
+        <p>属性に指定するものは事実上決まっており、常に同一の文字列を記述する</p>
+        <p>head : 文書の基本的情報を記述する部分<br>
+            body : 文書の本文内容を記述する部分<br>
+        </p>
+
+        <h3>head要素</h3>
+        <p>文書の表題、文書間の関係、その他のリソースなどを指し示す。</p>
+        <p>title : 文書の表題を示す<br>
+            link : 他の文書との関連を示す<br>
+            meta : 文書に関するその他の情報を記述する<br>
+        </p>
+
+        <h3>link要素</h3>
+        <p>文書から見た他の文書との関係を記述する。関係をrel属性に、文書URL（相対）をhref属性に、利用者に対する説明としてtitle属性を記述する。
+            &lt;link rel="next" href="page002.html" title="次ページ"&gt;<br>
+            代表的なrel属性値には次のようなものがある。
+        </p>
+        <table>
+            <caption>代表的なrelの属性値と意味</caption>
+            <tr><th>rel属性値</th><th>意味</th></tr>
+            <tr><td>start</td><td>開始ページ</td></tr>
+            <tr><td>next</td><td>次ページ</td></tr>
+            <tr><td>prev</td><td>前ページ</td></tr>
+            <tr><td>contents</td><td>目次ページ</td></tr>
+            <tr><td>index</td><td>索引ページ</td></tr>
+            <tr><td>stylesheet</td><td>適用スタイルシート</td></tr>
+            </table>
+
+        <h3>meta要素</h3>
+        <p>文書に関する様々な情報を記述する。</p>
+        <p>
+            説明文 : &lt;meta name="description" content="説明文"&gt;<br>
+            キーワード : &lt;meta name="keywords" content="word1, word2, ..."&gt;<br>
+            </p>
+
+        <h3>img要素による画像の挿入</h3>
+        <p>画像要素を示す。img要素には様々な属性が指定可能であるが、
+            画像を文書中に挿入するに当たって、本質的に必要となるのはsrcとaltの両属性のみである。<br>
+            &lt;img src="myphoto.jpg" alt="私の顔画像"&gt;
+        </p>
+
+        <h3>a要素によるハイパーリンク</h3>
+        <p>他の文書または同一文書内の別部分へのハイパーリンクをマークアップする。
+            a要素ではリンク先をhref属性で示す。href属性値にはURLを指定する。
+            このURLは画像のsrc属性と同様、同一サーバ内の相対、または絶対パスであってもいい。<br>
+            &lt;a href="https://trends.google.co.jp/trends/?geo=JP"&gt;Googleトレンド&lt;/a&gt; と記述すると以下のようになる。<br>
+            <a href="https://trends.google.co.jp/trends/?geo=JP">Googleトレンド</a>
+        </p>
+        </div>
+
+        <div id="study04">
+        <h2>関係を表すHTML要素</h2>
+        <h3>表組み</h3>
+        <p>tableは表組みを表現するための要素である。</p>
+        <p>&lt;table&gt;<br>
+            &lt;caption&gt;表題&lt;/caption&gt;<br>
+            &lt;tr&gt;&lt;th&gt;1-1&lt;/th&gt;&lt;th&gt;1-2&lt;/th&gt;&lt;th&gt;1-3&lt;/th&gt;&lt;/tr&gt;<br>
+            &lt;tr&gt;&lt;td&gt;2-1&lt;/td&gt;&lt;th&gt;2-2&lt;/th&gt;&lt;td&gt;2-3&lt;/td&gt;&lt;/tr&gt;<br>
+            &lt;tr&gt;&lt;th&gt;3-1&lt;/th&gt;&lt;th&gt;3-2&lt;/th&gt;&lt;th&gt;3-3&lt;/th&gt;&lt;/tr&gt;<br>
+            &lt;/table&gt;<br>
+            と書けば、</p>
+            <table>
+                <caption>表題</caption>
+                <tr><th>1-1</th><th>1-2</th><th>1-3</th></tr>
+                <tr><td>2-1</td><th>2-2</th><td>2-3</td></tr>
+                <tr><th>3-1</th><th>3-2</th><th>3-3</th></tr>
+                </table>
+        <p>と表示される</p>
+        <p>table要素下最初の子要素にはcaption要素を置けることと規定されている。
+            表組みの構造を表すtr要素で1行を表現し、行の各セルはthまたはtd要素による。
+            thは見出しセルを、tdは通常のデータセルを表す。
+        </p>
+        <h3>複雑な表</h3>
+        <p>th,td要素は、colspan,rowspan属性により、行、または列をまたぐセルを構成することができる。
+            属性値の数の分だけ続くセルを統合する。<br>
+            表中の列のグループ化要素にはcolgroup要素がある。列を構造としてまとめられる。
+            まとめるための列の指定にはcol要素を利用する。<br>
+            表中の行グループ化要素には、thead,tbody,tfootの各要素があり、それぞれ、ヘッダ行、本体行、フッタ行であることを示す。
+            tr要素を内部に持つ形でグループ化を行う。
+        </p>
+        <p>&lt;table&gt;<br>
+            &lt;caption&gt;複雑な表&lt;/caption&gt;<br>
+            &lt;colgroup&gt;<br>
+            &lt;col class="col1"&gt;&lt;col class="col2"&gt;<br>
+            &lt;/colgroup&gt;<br>
+            &lt;thead&gt;<br>
+            &lt;tr&gt;&lt;th colspan="2"&gt;見出し&lt;/th&gt;&lt;/tr&gt;<br>
+            &lt;/thead&gt;<br>
+            &lt;tbody&gt;<br>
+            &lt;tr&gt;&lt;td rowspan="2"&gt;項目 1&lt;/td&gt;&lt;td&gt;項目 1-2&lt;/td&gt;&lt;/tr&gt;<br>
+            &lt;tr&gt;&lt;td&gt;項目 2-2&lt;/td&gt;&lt;/tr&gt;<br>
+            &lt;/tbody&gt;
+            &lt;tfoot&gt;&lt;tr&gt;&lt;td&gt;フッタ 1&lt;/td&gt;&lt;td&gt;フッタ 2&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;<br>
+            &lt;/table&gt;&lt;br&gt;<br>
+            と書けば、</p>
+            <table>
+                <caption>複雑な表</caption>
+                <colgroup>
+                <col class="col1"><col class="col2">
+                </colgroup>
+                <thead>
+                <tr><th colspan="2">見出し</th></tr>
+                </thead>
+                <tbody>
+                <tr><td rowspan="2">項目 1</td><td>項目 1-2</td></tr>
+                <tr><td>項目 2-2</td></tr>
+                </tbody>
+                <tfoot><tr><td>フッタ 1</td><td>フッタ 2</td></tr></tfoot>
+                </table>
+
+        <h3>文書のグループ化div/span</h3>
+        <p>HTML文書の一部または全体について、</p>
+        <ul>
+            <li>文字色や大きさなどを変えたい</li>
+            <li>背景色や画像を入れたい</li>
+            <li>組み方を制御したい</li>
+            <li>動的な変化</li>
+        </ul>
+        <p>ということがある。</p>
+        <p>div要素はflow contentに属し、原則として子要素にflow contentに属する要素を置けるため、大きな構造をとりまとめるのに使用できる<br>
+            span要素はphrasing contentに属し、子要素にもphrasing contentのみを置くことができる。文中でいくつかの要素をとりまとめるのに使用できる。
+        </p>
+
+        <h3>class/id属性</h3>
+        <p>すべての要素にはclass属性とid要素を付与できる。
+            class属性はHTML内の複数箇所に同一の値を用いてもよく、ひとつの要素に対して複数のclass属性値を割り当てられる。
+            id属性は文書内で唯一の名前を要素に与えるものであり、ひとつの名称のみをその要素に付与できる。
+            このclass,id属性はcssでのスタイル指定やJavascriptにおける操作対象となる要素を識別するために用いられる。<br>
+            id,class名は先頭文字を英文字、半角英数字のみを用いることが好ましい。<br>
+        </p>
+        <p>&lt;table&gt;<br>
+            &lt;caption&gt;複雑な表&lt;/caption&gt;<br>
+            &lt;colgroup&gt;<br>
+            &lt;col class="col1"&gt;&lt;col class="col2"&gt;<br>
+            &lt;/colgroup&gt;<br>
+            &lt;thead&gt;<br>
+            &lt;tr&gt;&lt;th colspan="2"&gt;見出し&lt;/th&gt;&lt;/tr&gt;<br>
+            &lt;/thead&gt;<br>
+            &lt;tbody&gt;<br>
+            &lt;tr&gt;&lt;td rowspan="2"&gt;項目 1&lt;/td&gt;&lt;td&gt;項目 1-2&lt;/td&gt;&lt;/tr&gt;<br>
+            &lt;tr&gt;&lt;td&gt;項目 2-2&lt;/td&gt;&lt;/tr&gt;<br>
+            &lt;/tbody&gt;
+            &lt;tfoot&gt;&lt;tr&gt;&lt;td&gt;フッタ 1&lt;/td&gt;&lt;td&gt;フッタ 2&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;<br>
+            &lt;/table&gt;&lt;br&gt;<br>
+            とかけば、</p>
+            <table>
+                <caption>複雑な表</caption>
+                <colgroup>
+                <col class="col1"><col class="col2">
+                </colgroup>
+                <thead>
+                <tr><th colspan="2">見出し</th></tr>
+                </thead>
+                <tbody>
+                <tr><td rowspan="2">項目 1</td><td>項目 1-2</td></tr>
+                <tr><td>項目 2-2</td></tr>
+                </tbody>
+                <tfoot><tr><td>フッタ 1</td><td>フッタ 2</td></tr></tfoot>
+                </table>
+        <p>class属性の例</p>
+        <p>&lt;p class="odd one" id="first"&gt;第1段落&lt;/p&gt;<br>
+            &lt;p class="even two" id="seecond"&gt;第2段落&lt;/p&gt;<br>
+            &lt;p class="odd three" id="third"&gt;第3段落&lt;/p&gt;<br>
+            &lt;p class="even four" id="fourth"&gt;第4段落&lt;/p&gt;<br></p>
+        <p>divによるグループ化の例</p>
+        <p>&lt;body&gt;<br>
+            &lt;div class="first_and_second"&gt;<br>
+            &lt;p class="odd"&gt;第1段落。&lt;/p&gt;<br>
+            &lt;p class="even"&gt;第2段落。&lt;/p&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;p class="odd"&gt;第3段落。&lt;/p&gt;<br>
+            &lt;p class="even" id="fourth"&gt;第4段落。&lt;/p&gt;<br>
+            &lt;/body&gt;<br>
+        </p>
+        </div>
+
+        <div id="study05">
+        <h2>スタイルシート</h2>
+        <h3>cssの指定</h3>
+        <p>link要素のrel要素にstylesheetを設定し、
+            href属性として適用する外部スタイルシートのURLを示すことで
+            Webページにスタイルシートを関連づけて表示できる。<br>
+            &lt;link rel="stylesheet" herf="&lt;指定するファイルのURLまたはパス名&gt;"&gt;<br></p>
+
+        <h3>cssの書式</h3>
+        <p>&lt;セレクタ&gt; {&lt;プロパティ&gt;: &lt;値&gt;;<br>
+            &lt;プロパティ&gt;: &lt;値&gt; ...}<br>
+            のような書式をとる。<br>
+            セレクタはスタイルを適用する対象となるHTML構文木の部分木を指す（例えば、pならすべてのp要素）。
+            プロパティと値の組を宣言と呼び、セレクタ指定部分に対して実際に適用するスタイルを指定する。
+            セミコロンで区切ることで複数の宣言を同時に指定することができる。<br>
+            例<br>
+                * {<br>
+                color: #5555ff;<br>
+                border: thin solid #ffffff;<br>
+                background-color: #dddddd;<br>
+                }<br>
+                body {<br>
+                background-color: #90b090;<br>
+                }<br>
+                td.absentee {<br>
+                font-size: x-small;<br>
+                background-color: #f0a0a0;<br>
+                text-align: center;<br>
+                }<br>
+            このようにtd.absenteeとすればtd要素のうちclass="absentee"の要素にのみスタイルを指定する。<br>
+        </p>
+        <p>
+            クラスセレクタは先頭のピリオドに続けてclass属性名を記述する。<br>
+            IDセレクタは先頭がハッシュ記号#である。<br>
+            複数のセレクタが同一のHTML部分木を指し示すとき、どの宣言を優先するかをきめる要因の一つにセレクタの詳細度パラメタがある。
+            詳細度はそのセレクタを構成する各セレクタの詳細度の総和で、高い点数のものほど優先される。</p>
+            <table>
+                <caption>セレクタの詳細度</caption>
+                <tr><th>種類</th><th>点数</th><th>例</th></tr>
+                <tr><td>全称、結合子など</td><td>0</td><td>*, &gt;</td></tr>
+                <tr><td>要素型、疑似要素</td><td>1</td><td>td, ::first-letter</td></tr>
+                <tr><td>クラス、属性など</td><td>10</td><td>.className, [href="..."]</td></tr>
+                <tr><td>ID</td><td>100</td><td>#idName</td></tr>
+                </table>
+
+        <h3>value</h3>
+        <h4>長さ</h4>
+        <p>em : エム。親要素のfont-sizeの高さを1とする。<br>
+            rem : ルートエム。根要素であるhtml要素に設定されたfont-size、すなわちlemとの相対値。多くのブラウザで1rem=16px。<br>
+            ex : エックス。1ex=0.5em。<br>
+            in : インチ。1inch=25.4mm<br>
+            px : ピクセル。1px=1/96in<br>
+            pt : ポイント。1pt=1/72in<br>
+            mm : ミリメートル<br>
+            cm : センチメートル<br>
+            pc : パイカ。1pc=12pt=16px<br>
+        </p>
+        <h4>URL</h4>
+        <p>cssファイルのディレクトリからの相対パスで示す。<br>
+            url("../img/image02.jpg")<br>
+        </p>
+
+        <h3>プロパティ</h3>
+        <h4>テキスト</h4>
+        <p>text-align : テキストの揃え。left,center,right,justifyなど<br>
+            text-decoration : テキストの装飾、下線など。underline,overline,line-through,blinkなど<br>
+            font-size : フォントの大きさ、長さ。相対値で指示する。<br>
+            font-style : フォントの変形。normal,italic,obliqueなど。<br>
+            font-weight : フォントの太さ。bold,normalなど。<br>
+        </p>
+        <h4>背景</h4>
+        <p>background-color : 背景色を色で指示する。<br>
+            background-image : 背景に表示する画像をURLで指示する。<br>
+            background-position : 背景画像の表示位置を画像左上のwindow内相対座標で指示する。長さで指示する。<br>
+            background-repeat : 背景画像をタイルのように敷き詰めるか否か。repeat,repeat-x,repeat-y,no-repeat<br>
+        </p>
+        <h4>囲み</h4>
+        <p>marginやpaddingなどcontentを囲む領域の大きさを指定する。値は1～4つ指定でき、個数によって上下左右の指定箇所が異なる。<br>
+            1つ:上下左右、2つ:上下・左右、3つ:上・左右・下、4つ:上・右・下・左<br>
+            margin : 上下左右のmarginを長さ、相対値で指示する。<br>
+            padding : 上下左右のpaddingを長さ、相対値で指示する。<br>
+            border-style : 境界線の形状。ブラウザによって対応が異なる。none,hidden,dotted,solid,double,groove,ridge,inset,outset など<br>
+            border-width : 境界線の太さ。thin,medium,thick,長さ など<br>
+            border-color : 境界線の色。色で指示する。<br>
+        </p>
+
+        <h3>pseudo-class</h3>
+        <p>セレクタとして指示できる。</p>
+        <h4>リンク疑似クラス</h4>
+        <p>:link : 未訪問リンク（a:link）<br>
+            :visited : 既訪問リンク（a:visited）
+        </p>
+        <h4>ダイナミック疑似クラス</h4>
+        <p>:hover : 指示されているがアクティブでないとき（ポイント時）<br>
+            :active : アクティブ状態（ボタン押下時）<br>
+            :focus : フォーカス時（要素選択時）
+        </p>
+        </div>
+        <div id="study06">
+        <h2>JavaScript</h2>
+        <h3>処理モデル</h3>
+        <p>実行環境がWebブラウザ上にある場合、WindowやHTMLdocumentなどを組込みオブジェクトとして持つ。
+            HTMLドキュメントは木構造で表現され、DOM（Document Object Model）に基づいた表現として取り扱われる。
+            また、CSS要素にもアクセス可能である。
+            document treeやCSStreeにアクセスし、要素の追加、削除、更新や属性の追加、属性値の変更などを行うことで、
+            Webコンテンツに対して非常に広範囲の変更を加えることができる。利用者とのインタラクション目的に利用されることを企図して設計されているため、
+            プログラムの起動トリガーとしてのイベント駆動モデルで実行される。<br>
+            インターネット環境での利用を前提としているため、プログラムを取得したドメインのサーバーとの通信しか許可されず、
+            実行中のローカルマシンに対するファイルアクセスも許されない。<br>
+        </p>
+
+        <h3>HTMLとの関連付け</h3>
+        <p>webコンテンツではHTML内に関連付けるJavascriptプログラムファイルへのURLを記述することで、ブラウザにそのプログラムファイルの読み込みを指示する。<br>
+            JavascriptプログラムをHTMLファイルと関連付けるためにはHTMLのscript要素をhead要素化に配置し、外部ファイルを指定することが一般的である。<br>
+            <span class="span">例</span>&lt;script src="指定したいURL"&gt;&lt;/script&gt;<br>
+            script要素は要素内容としてスクリプトプログラムを記述することも可能である。<br>
+            src属性には実際に読み込むべきJavascriptファイルへのフルURL、絶対パス、相対パスのいずれかを記述する。
+            通常は同一サイト内のファイルを読み込むため、絶対パスか相対パスで指定する。
+            script要素は読み込みたいリソースの数に応じて任意の個数を記述できる。Javascriptでは読み込まれた順に実行されていく。
+            ここで、指定したJavascriptプログラムでは特定のHTML要素を捜査対象とするため、操作したい当該HTML要素には、class,id属性により識別子を割り当てておくと便利である。<br></p>
+
+        <h3>windowオブジェクト</h3>
+        <p>windowはWebブラウザのウインドウ自体を示すオブジェクトで、Web ブラウザ上で実行される際には、実行環境が事前に準備して利用可能な状態として提供される。
+            オブジェクトは、状態を表す属性情報を保持する容れ物としてプロパティと呼ばれるものを任意の個数持てる。
+            プロパティには、数値や文字列、他のオブジェクト、メソッドなどを保存できる。
+            各プロパティは識別のため名付けることができて、これをプロパティ名などと呼び、通常はこの名前で保存容器としてのプロパティを指定する。<br>
+            たとえば、abc と名付けられたオブジェクトに def と ghi という 2 つのプロパティがあったとすると、
+            それぞれ、abc.def、abc.ghi のようにオブジェクト名とプロパティ名をドット（.; ピリオド）でつないで記述する。
+            プロパティは空の場合もあり、数値や文字列などの単純なデータらしいものが入っていることもある。
+            また、他のオブジェクトやメソッドも入れられる。このような容れ物（箱）として見た場合、プロパティは変数と呼ばれる。
+            中身が変わることのあるデータ（数値だけに限らない）、という意味合いである。
+            気をつけなければならないのは、他のオブジェクトやメソッドは、大きすぎて直接プロパティには入らない点である。<br>
+            たとえばメソッドは、手順書のようなものであり、長い紙に多数の手順を連ねたようなものであると言える。
+            これは、小さな容器であるプロパティ（変数）にはそのまま入らない。
+            そこで、このようなものは、本体（ここではメソッド定義；手順書）は棚にしまっておき、
+            変数には、「棚のどこどこの位置に置いてあるもの」というような小さな紙片だけを入れておくような処理が行われる。
+            この格納位置を指し示していることを「参照」と呼ぶ。
+            オブジェクトのプロパティにメソッド定義を保存（代入）してやると、そのプロパティ名を使って、
+            このメソッドを呼び出す（実行）することができる。JavaScript の処理系は、プロパティに保存された参照を使って、
+            メソッド定義の本体を見つけ、それをプログラムとして実行するのである。
+            </p>
+        <h3>alert()メソッド</h3>
+        <p>alertメソッドは、windowオブジェクトにJavascript処理系が提供しているメソッドで、これを呼び出すと引数の文字列と「OK」ボタンのついた警告ダイアログボックスを表示する。<br>
+
+        <h3>文</h3>
+        <p>オブジェクト名とメソッド名をピリオドでつなぐと、そのメソッドが呼び出される。このような単位を文とよび、セミコロンで区切ることで複数の文を並べることができ、上から順番に実行させることができる。
+            Javascriptの文は広範囲にわたってのセミコロンの省略を許容する。
+            文にはif文、for文なども用意されている。
+        </p>
+
+        </div>
+
+        <div id="study07">
+        <h2>Javascriptの使い方</h2>
+        <h3>window.onload</h3>
+        <p>window.onloadはwindowオブジェクトのイベントハンドラの一つで、Webページの読み込みが完了した時に呼び出される一連の処理を設定する。
+        </p>
+        <p>
+        <br>
+        window.alert('Hello, world!');<br>}<br>と.jsに入力し、
+        何らかのid=sample1とした要素を用意し、次のコードを.jsに入力すると
+        、ブラウザで表示させ、該当するidの要素をクリックしたとき、ダイアログウィンドウが表示される。<br>
+        window.onload=function()<br>{<br>let node_sample1=document.getElementById('id属性値');<br>node_sample1.onclick=sample1;<br>};<br>
+        <br>
+        イベントハンドラを設定するためのプロパティには次のようなものがある。</p>
+        <table>
+            <caption>主なイベントハンドラを設定するためのプロパティ</caption>
+            <tr><th>イベント名</th><th>動作</th></tr>
+            <tr><td>onchange</td><td>フォーム状態が変化した</td></tr>
+            <tr><td>onclick</td><td>オブジェクトがクリックされた</td></tr>
+            <tr><td>onblclick</td><td>オブジェクトがダブルクリックされた</td></tr>
+            <tr><td>onfocus</td><td>オブジェクトフォーカスされた</td></tr>
+            <tr><td>onblur</td><td>オブジェクトのフォーカスが外れた</td></tr>
+            <tr><td>onkeydown</td><td>キーが押された</td></tr>
+            <tr><td>onkeyup</td><td>キーが離された</td></tr>
+            <tr><td>onkeypress</td><td>キーが打たれた</td></tr>
+            <tr><td>onload</td><td>ページ/画像が読み込まれた</td></tr>
+            <tr><td>onunload</td><td>ページ移動、閉じた、再読込</td></tr>
+            <tr><td>onmousedown</td><td>オブジェクト上でマウスボタンが押された</td></tr>
+            <tr><td>onmouseup</td><td>オブジェクト上でマウスボタンが離された</td></tr>
+            <tr><td>onmouseover</td><td>オブジェクトにマウスポインタが重なった</td></tr>
+            <tr><td>onmouseout</td><td>オブジェクトからマウスポインタが離れた</td></tr>
+            <tr><td>onmousemove</td><td>オブジェクト上でマウスポインタが移動した</td></tr>
+            <tr><td>onsubmit</td><td>フォームの送信ボタンが押された</td></tr>
+            <tr><td>onreset</td><td>フォーム取消しボタンが押された</td></tr>
+            </table>
+
+        <h3>
+            DOMモデル
+        </h3>
+        <P>HTMLコンテンツはJavaScriptではDOM（Document Object Model）と呼ばれるデータ構造でモデル化され操作できる。
+            DOMはHTMLの木構造を表現したデータモデルである。HTMLの要素をJavaScriptのオブジェクトとして表現したものである。
+            DOMはJavaScript言語自体の機能ではないが、W3Cにおいて標準化され、Webブラウザ上で機能するJavaScript処理系では共通して利用できるようになっている。
+            DOMで表現されたHTML木は木構造をJavaScriptのプログラムから扱える入れ子構造のオブジェクトになっている。
+            実際には入れ子構造のオブジェクトに直接アクセスするというより、木構造を考慮したAPIによって操作することになる。
+            このDOMを操作する一連のAPIはDOMインタフェースと呼ばれる。
+        </P>
+
+        <h3>
+            タイマ
+        </h3>
+        <P>Javascriptのタイマには2種類ある。
+        </P>
+        <ol>
+            <li>設定時間経過後に処理させる</li>
+            <li>設定時間毎に繰返し処理させる</li>
+        </ol>
+        <p>この2種類である。処理内容を登録しておき、設定時間経過後にその処理が呼び出されることになる。
+            待機中のタイマ処理を取り消すにはあらかじめ設定methodを呼び出した際の戻り値を適当な変数に割り当てておく必要がある。
+        </p>
+
+        </div>
+
+        <div class="links">
+            <span class="span"><a href="#">ページトップへ戻る</a></span>
+            <span class="span"><a href="#study01">学習用</a></span>
+            <span class="span"><a href="#study02">基本的な要素</a></span>
+            <span class="span"><a href="#study03">HTMLの代表的要素</a></span>
+            <span class="span"><a href="#study04">関係を表すHTML要素</a></span>
+            <span class="span"><a href="#study05">スタイルシート</a></span>
+            <span class="span"><a href="#study06">javascript</a></span>
+            <a href="#study07">Javascriptの使い方</a>
+        </div>
+    </body>
+</html>
